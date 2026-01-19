@@ -23,30 +23,27 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: #111;       /* dark header */
-    padding: 0;             /* remove default padding */
+    background: #111;
+    padding: 0;
     height: 70px;
 }
 
-/* White block on the left */
 .logo-container {
-    background: #fff;       /* white block */
-    width: 120px;           /* width of the white block */
-    height: 100%;           /* fill header height */
+    background: #fff;
+    width: 120px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Logo inside the white block */
 .logo {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #111;            /* dark text inside white block */
+    color: #111;
     text-align: center;
 }
 
-/* Header text and nav */
 header h1 {
     margin-left: 20px;
     font-family: 'Poppins', sans-serif;
@@ -55,7 +52,7 @@ header h1 {
 }
 
 header nav {
-    margin-left: auto;      /* push nav to the far right */
+    margin-left: auto;
     margin-right: 40px;
 }
 
@@ -76,7 +73,7 @@ header nav a:hover {
 .hero {
     text-align: center;
     background: #f9f9f9;
-    padding: 80px 20px;
+    padding: 150px 20px 210px; /* combined shorthand for top/right/bottom */
 }
 
 .hero h2 {
@@ -157,4 +154,66 @@ footer {
     header nav {
         margin-top: 10px;
     }
+}
+
+/* -----------------------------
+   Scroll Animation
+----------------------------- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -----------------------------
+   Contact Links Styling
+----------------------------- */
+#contact a {
+    display: inline-block;
+    padding: 8px 16px;       /* slightly bigger for readability */
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;        /* improved from 200 to bold */
+    color: #fff;
+    margin-right: 10px;      /* fixed missing value */
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Email - green */
+#contact a[href^="mailto:"] {
+    background-color: #28a745;
+}
+#contact a[href^="mailto:"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Phone - gray */
+#contact a[href^="tel:"] {
+    background-color: #6c757d;
+}
+#contact a[href^="tel:"]:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* LinkedIn - blue */
+#contact a[href*="linkedin.com"] {
+    background-color: #0077b5;
+}
+#contact a[href*="linkedin.com"]:hover {
+    background-color: #005983;
+    transform: translateY(-2px);
+}
+
+.contact-btn {
+    position: relative;
+    z-index: 1;
 }

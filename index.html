@@ -14,9 +14,9 @@
     <!-- Header / Navigation -->
     <header>
         <div class="logo-container">
-            <div class="logo">LOGO</div>
+            <div class="logo">LOGO Placeholder</div>
         </div>
-        <h1>Your Name</h1>
+        <h1>Wei JiaMing</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -32,41 +32,61 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="fade-up">
         <h2>About Me</h2>
         <p>
-            I’m a Digital Design diploma student at Republic Polytechnic seeking an internship to gain real-world
+            I'm a Digital Design diploma student at Republic Polytechnic seeking an internship to gain real-world
             experience.
-            I’m hardworking, eager to learn, and enjoy technology, troubleshooting, and teamwork.
+            I'm hardworking, eager to learn, and enjoy technology, troubleshooting, and teamwork.
         </p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Project Previews</h2>
+<!-- Projects Section -->
+<section id="projects" class="fade-up">
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built with HTML, CSS, and scroll animations.</p>
+    </div>
+    <div class="project-card">
+        <h3>UI/UX Assignment</h3>
+        <p>Design-focused project emphasizing layout and usability.</p>
+    </div>
+</section>
 
-        <div class="project-card">
-            <h3>Project Title</h3>
-            <p>Short description of the project.</p>
-        </div>
+<!-- Contact Section -->
+<section id="contact" class="fade-up">
+    <h2>Contact</h2>
+    <p style="font-weight: 700; font-family: 'Poppins', sans-serif;">Email: <a href="mailto:24012431@myrp.edu.sg" class="contact-btn">24012431@myrp.edu.sg</a></p>
+    <p style="font-weight: 700; font-family: 'Poppins', sans-serif;">LinkedIn: <a href="https://www.linkedin.com/in/weijm" target="_blank" class="contact-btn">www.linkedin.com/in/weijm</a></p>
+    <p style="font-weight: 700; font-family: 'Poppins', sans-serif;">Phone: <a href="tel:+6586860252" class="contact-btn">+65 8686-0252</a></p>
+</section>
 
-        <div class="project-card">
-            <h3>Project Title</h3>
-            <p>Short description of the project.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: 24012431@myrp.edu.sg</p>
-        <p>TEL: +65 8686 0252</p>
-    </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Wei Jia Ming</p>
+        <p>© 2026 Wei JiaMing</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-up');
+
+            const showOnScroll = () => {
+                const triggerBottom = window.innerHeight * 0.9;
+                faders.forEach(fader => {
+                    const faderTop = fader.getBoundingClientRect().top;
+                    if (faderTop < triggerBottom) {
+                        fader.classList.add('show');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', showOnScroll);
+            showOnScroll();
+        });
+    </script>
+
 
 </body>
 
