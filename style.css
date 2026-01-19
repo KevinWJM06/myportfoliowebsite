@@ -1,63 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* -----------------------------
+   Global Styles
+----------------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
     color: #333;
-    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
 }
 
-/* Header */
+/* -----------------------------
+   Header / Navigation
+----------------------------- */
 header {
     background: #111;
     color: #fff;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
 }
 
 header nav a {
     color: #fff;
     margin-left: 20px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 header nav a:hover {
     text-decoration: underline;
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
+/* -----------------------------
+   Hero Section
+----------------------------- */
 .hero {
     text-align: center;
-    background: #f9f9f9;
-    font-size: larger;
-    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9 ;
+    padding: 80px 20px;
 }
 
-/* Projects */
+.hero h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* -----------------------------
+   Sections
+----------------------------- */
+section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* -----------------------------
+   Projects
+----------------------------- */
 .project-card {
     background: #fff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
-/* Footer */
+/* -----------------------------
+   Footer
+----------------------------- */
 footer {
     text-align: center;
     padding: 20px;
     background: #111;
     color: #fff;
+    font-size: 0.9rem;
+}
+
+/* -----------------------------
+   Responsive adjustments
+----------------------------- */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
 }
