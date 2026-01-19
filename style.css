@@ -73,7 +73,8 @@ header nav a:hover {
 .hero {
     text-align: center;
     background: #f9f9f9;
-    padding: 150px 20px 210px; /* combined shorthand for top/right/bottom */
+    padding: 150px 20px 210px;
+    /* combined shorthand for top/right/bottom */
 }
 
 .hero h2 {
@@ -168,4 +169,12 @@ footer {
 .fade-up.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+#about {
+    margin-bottom: 220px; /* increase as needed */
+}
+
+#projects {
+    margin-bottom: 80px; /* increase as needed */
 }
