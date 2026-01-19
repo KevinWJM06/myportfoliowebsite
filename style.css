@@ -47,6 +47,7 @@ header {
 header h1 {
     margin-left: 20px;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
 }
@@ -70,24 +71,78 @@ header nav a:hover {
 /* -----------------------------
    Hero Section
 ----------------------------- */
+/* Hero Section - Raised style like your example */
 .hero {
-    text-align: center;
-    background: #f9f9f9;
-    padding: 150px 20px 210px;
-    /* combined shorthand for top/right/bottom */
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.hero h2 {
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.hero-text h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 1.3rem;
-    font-weight: 500;
+.hero-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
     color: #555;
+}
+
+/* Center image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 1px;
+    }
 }
 
 /* -----------------------------
@@ -178,3 +233,4 @@ footer {
 #projects {
     margin-bottom: 80px; /* increase as needed */
 }
+

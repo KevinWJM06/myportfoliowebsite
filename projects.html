@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - WeiJiaMing</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Wei JiaMing</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    </nav>
-</header>
+    <header>
+        <div class="logo-container">
+            <div class="logo">LOGO</div>
+        </div>
+        <h1>Wei JiaMing</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<section>
-    <h2>Projects</h2>
+    <section class="projects-hero fade-up">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I've worked on with detailed views.</p>
+    </section>
 
-    <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>A personal portfolio built using HTML and CSS.</p>
-    </div>
+    <section id="projects" class="fade-up">
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio built with HTML, CSS, and scroll animations to showcase my design and front-end
+                skills.</p>
+            <ul>
+                <li><strong>Skills:</strong> HTML, CSS, JavaScript, Responsive Design</li>
+                <li><strong>Role:</strong> Designer & Developer</li>
+            </ul>
+            <img src="portfolio-screenshot.png" alt="Portfolio Website Screenshot" class="project-image">
+            <div class="project-buttons">
+                <a href="https://your-portfolio-live-link.com" target="_blank" class="project-btn">View Live</a>
+                <a href="https://github.com/yourusername/portfolio" target="_blank" class="project-btn">View Code</a>
+            </div>
+        </div>
 
-    <div class="project-card">
-        <h3>Design Assignment</h3>
-        <p>A UI/UX project focusing on layout and usability.</p>
-    </div>
-</section>
+        <div class="project-card">
+            <h3>UI/UX Assignment</h3>
+            <p>Design-focused project emphasizing layout, usability, and user experience design principles.</p>
+            <ul>
+                <li><strong>Skills:</strong> Figma, Wireframing, UI/UX Design</li>
+                <li><strong>Role:</strong> Designer</li>
+            </ul>
+            <img src="uiux-screenshot.png" alt="UI/UX Assignment Screenshot" class="project-image">
+            <div class="project-buttons">
+                <a href="#" target="_blank" class="project-btn">View Live</a>
+                <a href="#" target="_blank" class="project-btn">View Code</a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Wei JiaMing</p>
-</footer>
+    <footer>
+        <p>© 2026 Wei JiaMing</p>
+    </footer>
 
 </body>
+
 </html>
