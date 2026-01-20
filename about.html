@@ -60,5 +60,24 @@
     <p>© 2026 Wei JiaMing</p>
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const faders = document.querySelectorAll('.fade-up');
+
+        const showOnScroll = () => {
+            const triggerBottom = window.innerHeight * 0.9;
+            faders.forEach(fader => {
+                const faderTop = fader.getBoundingClientRect().top;
+                if (faderTop < triggerBottom) {
+                    fader.classList.add('show');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', showOnScroll);
+        showOnScroll();
+    });
+</script>
+
 </body>
 </html>
