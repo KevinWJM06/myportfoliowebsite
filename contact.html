@@ -1,37 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <title>Contact - Wei JiaMing</title> <!-- More descriptive title -->
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <header>
         <div class="logo-container">
-            <div class="logo">LOGO Placeholder</div>
+            <div class="logo">WJM</div> <!-- Shorter, cleaner logo -->
         </div>
         <h1>Wei JiaMing</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
+            <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a> <!-- Active state indicator -->
         </nav>
     </header>
 
-<section>
-    <h2>Reach me via:</h2>
-    <p>Email: <a href="mailto:24012431@myrp.edu.sg" class="contact-btn">24012431@myrp.edu.sg</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/weijm" target="_blank" class="contact-btn">www.linkedin.com/in/weijm</a></p>
-    <p>Phone: <a href="tel:+6586860252" class="contact-btn">+65 8686-0252</a></p>
-</section>
+    <section id="contact" class="fade-up">
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-header">
+                    <h2>Get In Touch</h2> <!-- More engaging heading -->
+                    <p class="contact-subtitle">I'm currently seeking internship opportunities and would love to connect.</p>
+                </div>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="https://outlook.office.com/mail/deeplink/compose?to=24012431@myrp.edu.sg" class="contact-link">24012431@myrp.edu.sg</a>
+                            <p class="contact-response">Typically responds within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/weijm" target="_blank" class="contact-link">linkedin.com/in/weijm</a>
+                            <p class="contact-response">Connect for professional networking</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+6586860252" class="contact-link">+65 8686 0252</a>
+                            <p class="contact-response">Available Mon-Fri, 9am-6pm</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-note">
+                    <p><i class="fas fa-clock"></i> <strong>Best time to reach me:</strong> Weekdays, 9am-6pm <br> Weekends, 12pm-8pm</p>
+                    <p><i class="fas fa-comment"></i> <strong>Preferred method:</strong> Email or Whatsapp</p>
+                </div>
+            </div>
+            
+            <div class="contact-image">
+                <img src="images/phone.jpg" alt="Contact Me - Wei JiaMing">
+                <div class="image-caption">
+                    <p>Available for internships starting March 2026</p> <!-- Professional context -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Wei JiaMing</p>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Wei JiaMing. All Rights Reserved.</p>
+            <p class="footer-note">Digital Design Student at Republic Polytechnic | Seeking Internship Opportunities</p>
+            <div class="footer-links">
+                <a href="https://outlook.office.com/mail/deeplink/compose?to=24012431@myrp.edu.sg"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/weijm" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="tel:+6586860252"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-up');
+            
+            // Add active class to current page nav link
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            const showOnScroll = () => {
+                const triggerBottom = window.innerHeight * 0.9;
+                faders.forEach(fader => {
+                    const faderTop = fader.getBoundingClientRect().top;
+                    if (faderTop < triggerBottom) {
+                        fader.classList.add('show');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', showOnScroll);
+            showOnScroll();
+        });
+    </script>
 
 </body>
+
 </html>
