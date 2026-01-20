@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
 
-/* -----------------------------
-   Global Styles
------------------------------ */
+/* Base */
 * {
     margin: 0;
     padding: 0;
@@ -13,25 +11,21 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background: #f9f9f9;
 }
 
-/* -----------------------------
-   Header / Navigation
------------------------------ */
+/* Header */
 header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    background: #111;
-    padding: 0;
     height: 70px;
+    background: #111;
 }
 
 .logo-container {
-    background: #fff;
     width: 120px;
     height: 100%;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +35,6 @@ header {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #111;
-    text-align: center;
 }
 
 header h1 {
@@ -58,8 +51,8 @@ header nav {
 }
 
 header nav a {
-    color: #fff;
     margin-left: 20px;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -68,56 +61,45 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* -----------------------------
-   Hero Section
------------------------------ */
-/* Hero Section - Raised style like your example */
+/* Hero */
 .hero {
-    max-width: 1400px;
-    margin: 100px auto;
-    padding: 40px;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    padding: 200px;
     background: #fff;
-    border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    margin-bottom: 200px;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 40px;
 }
 
 .hero-text {
     flex: 1;
-    min-width: 200px;
     text-align: center;
 }
 
 .hero-text h2 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
     font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .hero-text p {
-    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     color: #555;
 }
 
-/* Center image */
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .hero-image img {
@@ -128,26 +110,7 @@ header nav a:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-    }
-
-    .hero-text {
-        text-align: center;
-    }
-
-    .hero-image img {
-        width: 180px;
-        height: 1px;
-    }
-}
-
-/* -----------------------------
-   Sections
------------------------------ */
+/* Sections */
 section {
     max-width: 900px;
     margin: 60px auto;
@@ -156,32 +119,27 @@ section {
 
 section h2 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;
     font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 20px;
     color: #111;
 }
 
 section p {
-    font-size: 1rem;
     margin-bottom: 15px;
     color: #444;
 }
 
-/* -----------------------------
-   Projects
------------------------------ */
+/* Projects */
 .project-card {
     background: #fff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
-/* -----------------------------
-   Footer
------------------------------ */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -190,31 +148,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* -----------------------------
-   Responsive adjustments
------------------------------ */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav {
-        margin-top: 10px;
-    }
-}
-
-/* -----------------------------
-   Scroll Animation
------------------------------ */
+/* Animation */
 .fade-up {
     opacity: 0;
     transform: translateY(50px);
@@ -226,10 +160,36 @@ footer {
     transform: translateY(0);
 }
 
+/* Spacing */
 #about {
-    margin-bottom: 220px; /* increase as needed */
+    margin-bottom: 220px;
 }
 
 #projects {
-    margin-bottom: 80px; /* increase as needed */
+    margin-bottom: 80px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
 }
