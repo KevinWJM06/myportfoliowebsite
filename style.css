@@ -398,71 +398,137 @@ main {
     font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .project-card {
-        padding: 30px;
-        gap: 30px;
-    }
-    
-    .project-image {
-        width: 240px;
-        height: 160px;
+/* ========== HOMEPAGE PROJECTS SECTION (3 CARDS IN ROW) ========== */
+/* This is specifically for index.html only */
+.homepage-projects #projects {
+    max-width: 1200px;
+    margin: 80px auto 100px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.homepage-projects #projects h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.homepage-projects .projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.homepage-projects .project-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid #111;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    min-height: 300px;
+}
+
+.homepage-projects .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-projects .project-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-projects .project-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.homepage-projects .project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide buttons and lists on homepage projects */
+.homepage-projects .project-buttons,
+.homepage-projects .project-card ul {
+    display: none;
+}
+
+/* Responsive for 3 projects in a row */
+@media (min-width: 992px) {
+    .homepage-projects .project-card {
+        max-width: 350px;
     }
 }
 
-@media (max-width: 768px) {
-    #projects {
-        padding: 0 15px;
-        gap: 30px;
+@media (max-width: 991px) and (min-width: 768px) {
+    .homepage-projects .projects-container {
+        justify-content: space-around;
     }
     
-    .project-card {
+    .homepage-projects .project-card {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-projects .projects-container {
         flex-direction: column;
-        padding: 25px;
-        gap: 25px;
-        text-align: center;
-    }
-    
-    .project-image {
-        width: 100%;
-        max-width: 400px;
-        height: 200px;
-        margin: 0 auto;
-    }
-    
-    .project-content {
         align-items: center;
+        gap: 25px;
     }
     
-    .project-card ul {
-        text-align: left;
-        width: 100%;
+    .homepage-projects .project-card {
+        max-width: 100%;
+        min-height: auto;
     }
     
-    .project-buttons {
-        justify-content: center;
-        width: 100%;
+    .homepage-projects .project-card h3 {
+        height: auto;
+        min-height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .project-card {
+    .homepage-projects #projects {
+        margin: 60px auto 80px;
+    }
+    
+    .homepage-projects #projects h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .homepage-projects .project-card {
         padding: 20px;
     }
     
-    .project-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .project-card p {
-        font-size: 1rem;
-    }
-    
-    .project-btn {
-        padding: 10px 20px;
-        min-width: 120px;
-        font-size: 0.95rem;
+    .homepage-projects .project-image {
+        height: 160px;
     }
 }
 
@@ -813,12 +879,14 @@ section p {
         max-width: 300px;
     }
 
-    .projects-container {
-        gap: 25px;
+    .project-card {
+        padding: 30px;
+        gap: 30px;
     }
     
-    .project-card {
-        min-width: 280px;
+    .project-image {
+        width: 240px;
+        height: 160px;
     }
 }
 
@@ -892,14 +960,37 @@ section p {
         font-size: 1rem;
     }
 
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
+    #projects {
+        padding: 0 15px;
+        gap: 30px;
     }
     
     .project-card {
-        max-width: 100%;
-        min-width: auto;
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .project-content {
+        align-items: center;
+    }
+    
+    .project-card ul {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .project-buttons {
+        justify-content: center;
+        width: 100%;
     }
 
     section {
@@ -931,6 +1022,26 @@ section p {
 
     footer {
         padding: 40px 20px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 20px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .project-card p {
+        font-size: 1rem;
+    }
+    
+    .project-btn {
+        padding: 10px 20px;
+        min-width: 120px;
+        font-size: 0.95rem;
     }
 }
 
