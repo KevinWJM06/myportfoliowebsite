@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const faders = document.querySelectorAll('.fade-up');
     const header = document.querySelector('header');
-    const hero = document.querySelector('#hero');
+    const hero = document.querySelector('#hero, .about-hero, .projects-hero, .contact-hero');
 
     // Add active class to current page nav link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!header) return;
 
         if (hero) {
-            // Homepage: Transparent over hero, White after
+            // Pages with Hero: Transparent over hero, White after
             const heroBottom = hero.offsetTop + hero.offsetHeight - 70; // 70px buffer for smooth transition
             if (window.scrollY > heroBottom) {
                 header.classList.add('light-section');
@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.remove('light-section');
             }
         } else {
-            // Other pages: Always white (light-section)
-            // This ensures text is visible on light backgrounds (since default is white text)
+            // Fallback (e.g. Contact if no hero yet): Always white (light-section)
             header.classList.add('light-section');
         }
     };
