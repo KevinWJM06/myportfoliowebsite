@@ -412,30 +412,31 @@ main {
 
 /* ========== HOMEPAGE PROJECTS SECTION (3 CARDS IN ROW) ========== */
 /* This is specifically for index.html only */
-.homepage-projects #projects {
+/* ========== HOMEPAGE 3-PROJECT LAYOUT ========== */
+.homepage-projects-section {
     max-width: 1200px;
     margin: 80px auto 100px;
     padding: 0 20px;
     text-align: center;
 }
 
-.homepage-projects #projects h2 {
+.homepage-projects-section h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     color: #111;
 }
 
-.homepage-projects .projects-container {
+.homepage-projects-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
     width: 100%;
+    flex-wrap: wrap;
 }
 
-.homepage-projects .project-card {
+.homepage-project-card {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
@@ -450,12 +451,12 @@ main {
     min-height: auto;
 }
 
-.homepage-projects .project-card:hover {
+.homepage-project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.homepage-projects .project-card h3 {
+.homepage-project-card h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
@@ -468,7 +469,7 @@ main {
     justify-content: center;
 }
 
-.homepage-projects .project-card p {
+.homepage-project-card p {
     color: #444;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -476,7 +477,7 @@ main {
     flex-grow: 1;
 }
 
-.homepage-projects .project-image {
+.homepage-project-image {
     width: 100%;
     height: auto;
     max-height: 200px;
@@ -487,62 +488,63 @@ main {
     background-color: #f5f5f5;
 }
 
-/* Hide buttons and lists on homepage projects */
-.homepage-projects .project-buttons,
-.homepage-projects .project-card ul {
-    display: none;
-}
-
-/* Responsive for 3 projects in a row */
+/* Responsive design for horizontal layout */
 @media (min-width: 992px) {
-    .homepage-projects .project-card {
-        max-width: 350px;
+    .homepage-projects-grid {
+        flex-wrap: nowrap;
+        /* Force horizontal layout on desktop */
+    }
+
+    .homepage-project-card {
+        max-width: calc(33.333% - 20px);
+        /* 3 cards with gaps */
     }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
-    .homepage-projects .projects-container {
+    .homepage-projects-grid {
+        flex-wrap: wrap;
         justify-content: space-around;
     }
-    
-    .homepage-projects .project-card {
+
+    .homepage-project-card {
         max-width: 320px;
     }
 }
 
 @media (max-width: 767px) {
-    .homepage-projects .projects-container {
+    .homepage-projects-grid {
         flex-direction: column;
         align-items: center;
         gap: 25px;
     }
-    
-    .homepage-projects .project-card {
+
+    .homepage-project-card {
         max-width: 100%;
         min-height: auto;
     }
-    
-    .homepage-projects .project-card h3 {
+
+    .homepage-project-card h3 {
         height: auto;
         min-height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .homepage-projects #projects {
+    .homepage-projects-section {
         margin: 60px auto 80px;
     }
-    
-    .homepage-projects #projects h2 {
+
+    .homepage-projects-section h2 {
         font-size: 1.8rem;
         margin-bottom: 30px;
     }
-    
-    .homepage-projects .project-card {
+
+    .homepage-project-card {
         padding: 20px;
     }
-    
-    .homepage-projects .project-image {
+
+    .homepage-project-image {
         max-height: 180px;
     }
 }
@@ -586,11 +588,13 @@ main {
 
 /* Different border colors for each section */
 #design-projects .project-card {
-    border-left: 5px solid #ff6b6b; /* Red for design */
+    border-left: 5px solid #ff6b6b;
+    /* Red for design */
 }
 
 #coding-projects .project-card {
-    border-left: 5px solid #4ecdc4; /* Teal for coding */
+    border-left: 5px solid #4ecdc4;
+    /* Teal for coding */
 }
 
 /* Projects container for sections */
@@ -981,7 +985,7 @@ section p {
         padding: 30px;
         gap: 30px;
     }
-    
+
     .project-image {
         width: 240px;
     }
@@ -1061,29 +1065,29 @@ section p {
         padding: 0 15px;
         gap: 30px;
     }
-    
+
     .project-card {
         flex-direction: column;
         padding: 25px;
         gap: 25px;
         text-align: center;
     }
-    
+
     .project-image {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
     }
-    
+
     .project-content {
         align-items: center;
     }
-    
+
     .project-card ul {
         text-align: left;
         width: 100%;
     }
-    
+
     .project-buttons {
         justify-content: center;
         width: 100%;
@@ -1102,22 +1106,22 @@ section p {
         margin: 60px auto;
         padding: 0 15px;
     }
-    
+
     .section-header {
         margin-bottom: 40px;
     }
-    
+
     .section-header h2 {
         font-size: 1.8rem;
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .section-subtitle {
         font-size: 1rem;
         padding: 0 10px;
     }
-    
+
     .projects-container {
         gap: 30px;
     }
@@ -1150,29 +1154,29 @@ section p {
     .project-card {
         padding: 20px;
     }
-    
+
     .project-card h3 {
         font-size: 1.3rem;
     }
-    
+
     .project-card p {
         font-size: 1rem;
     }
-    
+
     .project-btn {
         padding: 10px 20px;
         min-width: 120px;
         font-size: 0.95rem;
     }
-    
+
     .projects-section {
         margin: 50px auto;
     }
-    
+
     .section-header h2 {
         font-size: 1.6rem;
     }
-    
+
     .section-subtitle {
         font-size: 0.95rem;
     }
@@ -1309,12 +1313,12 @@ section p {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .certificates-section h2 {
         font-size: 1.8rem;
         margin-bottom: 30px;
     }
-    
+
     .certificate-card {
         padding: 20px;
     }
