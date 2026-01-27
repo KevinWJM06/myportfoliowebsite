@@ -99,30 +99,30 @@
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-info">
-                    <h3>Get In Touch</h3>
-                    <p>I'm currently seeking internship opportunities and would love to connect with professionals in
-                        the design and tech industry.</p>
-                    <p>Feel free to reach out via email, LinkedIn, or phone. I typically respond within 24 hours.</p>
+                    <h3>Wei JiaMing</h3>
+                    <p>Digital Design student at Republic Polytechnic, passionate about creating intuitive digital
+                        experiences through UI/UX design and front-end development.</p>
+                    <p>Currently seeking internship opportunities to apply my skills in a professional environment.</p>
                 </div>
 
                 <div class="footer-links-section">
-                    <h4>Contact Info</h4>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                        <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-section">
+                    <h4>Connect With Me</h4>
                     <ul>
                         <li><a href="https://outlook.office.com/mail/deeplink/compose?to=24012431@myrp.edu.sg"><i
                                     class="fas fa-envelope"></i> 24012431@myrp.edu.sg</a></li>
                         <li><a href="https://www.linkedin.com/in/weijm" target="_blank"><i class="fab fa-linkedin"></i>
                                 LinkedIn Profile</a></li>
                         <li><a href="tel:+6586860252"><i class="fas fa-phone"></i> +65 8686 0252</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-                        <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
-                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -146,40 +146,11 @@
                 </div>
             </div>
 
-            <p class="footer-note">Available for internships starting March 2026 • Digital Design Student at Republic
-                Polytechnic</p>
+            <p class="footer-note">Digital Design Student | Republic Polytechnic | Seeking Internship Opportunities</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faders = document.querySelectorAll('.fade-up');
-
-            // Add active class to current page nav link
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const linkHref = link.getAttribute('href');
-                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
-                    link.classList.add('active');
-                }
-            });
-
-            const showOnScroll = () => {
-                const triggerBottom = window.innerHeight * 0.9;
-                faders.forEach(fader => {
-                    const faderTop = fader.getBoundingClientRect().top;
-                    if (faderTop < triggerBottom) {
-                        fader.classList.add('show');
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', showOnScroll);
-            showOnScroll();
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
