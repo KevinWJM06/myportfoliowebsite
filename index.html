@@ -19,7 +19,6 @@
                 <img src="images/placeholder.jpg" alt="WJM Logo">
             </div>
         </div>
-        <h1>Wei JiaMing</h1>
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About Me</a>
@@ -33,16 +32,15 @@
         <!-- Hero Section -->
         <section class="hero fade-up" id="hero">
             <div class="hero-container">
-                <div class="hero-text">
-                    <h2>designer</h2>
-                    <p>Beginner digital designer skilled in Illustrator, Photoshop, and Figma.</p>
-                </div>
-                <div class="hero-image">
-                    <img src="images/img.jpg" alt="Profile Image">
-                </div>
-                <div class="hero-text">
-                    <h2>&lt;coder&gt;</h2>
-                    <p>Beginner coder with basic knowledge of HTML, CSS, and Python etc.</p>
+                <div class="hero-content">
+                    <h1 class="hero-name">WEI JIAMING</h1>
+                    <div class="hero-divider"></div>
+                    <h2 class="hero-subtitle">DIGITAL DESIGNER</h2>
+                    <p class="hero-welcome">Welcome to my portfolio.</p>
+                    <div class="hero-description">
+                        <p>I'm a digital design student with a passion for clean interfaces and functional code.</p>
+                        <p class="hero-emoji">✨</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -82,7 +80,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <!-- Contact Section -->
         <section id="contact" class="fade-up">
@@ -191,6 +189,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const faders = document.querySelectorAll('.fade-up');
+            const header = document.querySelector('header');
+
+            // Define sections with light backgrounds
+            const lightSections = [
+                '#about',
+                '#projects',
+                '.homepage-projects-section',
+                '#contact',
+                '.about-hero',
+                '.projects-hero',
+                '.about-content',
+                '.projects-section',
+                '.certificates-section'
+            ];
 
             // Add active class to current page nav link
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -213,8 +225,49 @@
                 });
             };
 
-            window.addEventListener('scroll', showOnScroll);
-            showOnScroll();
+            // Function to check if navbar is over a light section
+            const checkNavbarBackground = () => {
+                const scrollPosition = window.scrollY + header.offsetHeight;
+                let isOverLightSection = false;
+
+                // Check each light section
+                lightSections.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        const elementTop = element.offsetTop;
+                        const elementBottom = elementTop + element.offsetHeight;
+
+                        // Check if navbar is within this section
+                        if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+                            isOverLightSection = true;
+                        }
+                    }
+                });
+
+                // Toggle light-section class
+                if (isOverLightSection) {
+                    header.classList.add('light-section');
+                    header.classList.remove('scrolled');
+                } else {
+                    header.classList.remove('light-section');
+
+                    // Add scrolled class only when not over light section and scrolled down
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            };
+
+            // Combined scroll handler
+            const handleScroll = () => {
+                showOnScroll();
+                checkNavbarBackground();
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
 
             // Add hover effects for project cards
             const projectCards = document.querySelectorAll('.project-card');
