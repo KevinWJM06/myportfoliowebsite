@@ -1475,12 +1475,6 @@ section p {
         font-size: 1rem;
     }
 
-    .project-btn {
-        padding: 10px 20px;
-        min-width: 120px;
-        font-size: 0.95rem;
-    }
-
     .projects-section {
         margin: 50px auto;
     }
