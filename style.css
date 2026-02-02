@@ -836,12 +836,12 @@ main {
 
 /* Different border colors for each section */
 #design-projects .project-card {
-    border-left: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-left: solid #ff6b6b;
     /* Red for design */
 }
 
 #coding-projects .project-card {
-    border-left: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-left: solid #4ecdc4;
     /* Teal for coding */
 }
 
