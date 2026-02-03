@@ -91,9 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
         });
 
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0)';
             card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
         });
     });
+
+    // Back to Top Button Logic
+    const backToTopBtn = document.querySelector('.back-to-top');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
