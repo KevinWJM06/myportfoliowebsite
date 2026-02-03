@@ -572,9 +572,10 @@ main {
 }
 
 .project-image {
-    width: 280px;
+    width: auto;
+    max-width: 45%;
     height: auto;
-    max-height: 200px;
+    max-height: 600px;
     object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
@@ -1235,7 +1236,7 @@ section p {
     }
 
     .project-image {
-        width: 240px;
+        max-width: 40%;
     }
 }
 
